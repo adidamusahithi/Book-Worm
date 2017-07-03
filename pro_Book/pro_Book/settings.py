@@ -51,12 +51,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pro_Book.urls'
-
-TEMPLATES = [
+ROOT_URLCONF = 'pro_Book.urls'TEMPLATES = [
     {
+
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'app_Book/templets/app_Book'),],
+        'DIRS': [os.path.join(BASE_DIR,'app_Book/templates/app_Book'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -36,10 +36,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+       
+     </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
@@ -49,29 +47,39 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Book Worm</h1>      
-    <p>Online book finder</p>
+    <h1>Book Worm</h1>   
+    <p>
+    {% for c in index %}   
+    {{c.cname}}</p>
+          {%load static %}
+      <img src="{% static "app_Book\fiction.jpg" %}"  style="width:100%,height:50%" alt="Image"/>
+
+    {% endfor %}
   </div>
 </div>
   
 <div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
+  <h3>Generes</h3><br>
   <div class="row">
     <div class="col-sm-3">
-      <p>Ficton</p>
-      <img src="fiction.jpg"  style="width:100%,height:50%" alt="Image">
+    
+      <p><a href = "#">Ficton</a></p>
+      {%load static %}
+      <img src="{% static "app_Book\fiction.jpg" %}"  style="width:100%,height:50%" alt="Image"/>
+      
     </div>
     <div class="col-sm-3"> 
-      <p>Horror</p>
-      <img src="horror.jpg" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Horror</a></p>
+      
+      <img src="{% static "app_Book\horror.jpg"%}" style="width:100%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3"> 
-      <p>Computer-technology</p>
-      <img src="ct.jpg" class="img-responsive" style="width:500%,height:50%" alt="Image">
+      <p><a href = "#">Computer-technology</a></p>
+      <img src="{% static "app_Book\ct.jpg"%}" class="img-responsive" style="width:500%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3">
-      <p>Action-adventure</p>
-      <img src="aa.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Action-adventure</a></p>
+      <img src="{% static "app_Book\aa.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
   </div>
 </div><br>
@@ -79,33 +87,33 @@
 <div class="container-fluid bg-3 text-center">    
   <div class="row">
     <div class="col-sm-3">
-      <p>History</p>
-      <img src="history1.jpg" class="img-responsive" style="width:100%,height:10%" alt="Image">
+      <p><a href = "#">History</a></p>
+      <img src="{% static "app_Book\history1.jpg"%}" class="img-responsive" style="width:100%,height:10%" alt="Image">
     </div>
     <div class="col-sm-3"> 
-      <p>Romance</p>
-      <img src="romance.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Romance</a></p>
+      <img src="{% static "app_Book\romance.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3"> 
-      <p>Cooking</p>
-      <img src="cooking.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Cooking</a></p>
+      <img src="{% static "app_Book\cooking.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3"> 
-      <p>Crime</p>
-      <img src="crime.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Crime</a></p>
+      <img src="{% static "app_Book\crime.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3"> 
       <p></p>
-      <img src="white.png" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <img src="{% static "app_Book\white.png"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
     
     <div class="col-sm-3"> 
-      <p>Humor-entertainment</p>
-      <img src="humor.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Humor-entertainment</a></p>
+      <img src="{% static "app_Book\humor.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
     <div class="col-sm-3">
-      <p>Others</p>
-      <img src="others.jpg" class="img-responsive" style="width:100%,height:50%" alt="Image">
+      <p><a href = "#">Others</a></p>
+      <img src="{% static "app_Book\others.jpg"%}" class="img-responsive" style="width:100%,height:50%" alt="Image">
     </div>
   </div>
 </div>
