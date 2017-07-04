@@ -12,6 +12,7 @@ class Book_List(models.Model):
     Bid = models.CharField(max_length = 10,primary_key = True)
     Bname = models.CharField(max_length = 100)
     cid = models.ForeignKey('Categories') 
+    book_url = models.CharField(max_length = 150,default = "null")
     def __str__(self):
         return self.Bid
 class Author(models.Model):
@@ -28,8 +29,9 @@ class Book_details(models.Model):
     Bid = models.ForeignKey('Book_List')   
     price = models.IntegerField(max_length = 100,default = 1)
     rate = models.IntegerField(max_length = 100,default = 1)
+    det_id = models.CharField(max_length = 20,default = "null")
     def __str__(self):
-        return self.rate
+        return self.det_id
 
     
 

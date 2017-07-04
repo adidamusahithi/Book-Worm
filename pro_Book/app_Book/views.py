@@ -4,7 +4,7 @@ from app_Book.models import Categories
 def index(request):
     cat = Categories.objects.all()
     return render(request, 'app_Book/index.html',{'index': cat})
-def second(request):
+def book_list(request):
     #if Categories.cid = 'fiction'
 
-    return render(request, 'app_Book/second.html',{})
+    return render(request, 'app_Book/book_list.html',{})
