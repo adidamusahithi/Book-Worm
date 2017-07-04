@@ -5,4 +5,6 @@ def index(request):
     cat = Categories.objects.all()
     return render(request, 'app_Book/index.html',{'index': cat})
 def second(request):
+    #if Categories.cid = 'fiction'
+
     return render(request, 'app_Book/second.html',{})

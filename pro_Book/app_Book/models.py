@@ -6,16 +6,17 @@ class Categories(models.Model):
     cid = models.CharField(max_length = 10, primary_key = True)
     cname = models.CharField(max_length = 50)
     def __str__(self):
-        return self.cname
+        return self.cid
+        
 class Book_List(models.Model):
-    Bid = models.CharField(max_length = 10)
-    Bname = models.CharField(max_length = 30)
-    cid = models.ForeignKey('Categories')
+    Bid = models.CharField(max_length = 10,primary_key = True)
+    Bname = models.CharField(max_length = 100)
+    cid = models.ForeignKey('Categories') 
     def __str__(self):
-        return self.Bname
+        return self.Bid
 class Author(models.Model):
     Aid = models.CharField(max_length = 10, primary_key = True)
-    Aname = models.CharField(max_length = 30)
+    Aname = models.CharField(max_length = 70)
     def __str__(self):
         return self.Aid
 class Book_Author(models.Model):
@@ -23,16 +24,25 @@ class Book_Author(models.Model):
     Aid = models.ForeignKey('Author')
     def __str__(self):
         return self.Bid
-class Book_Details(models.Model):
-    Bid = models.ForeignKey('Book_List')
-    price = models.IntegerField()
-    ratings = models.FloatField()
+class Book_details(models.Model):
+    Bid = models.ForeignKey('Book_List')   
+    price = models.IntegerField(max_length = 100,default = 1)
+    rate = models.IntegerField(max_length = 100,default = 1)
     def __str__(self):
-        return self.price
-class Wishlist(models.Model):
-    #uid = models.CharField(max_length = 10)
-    Bid = models.ForeignKey('Book_List')
-    price = models.IntegerField()
+        return self.rate
+
+    
+
+
+
+
+
+    #rating = models.IntegerField()
+'''class Wishlist(models.Model):
+    uid = models.CharField(max_length = 10)
+    #Bid = models.ForeignKey('Book_List')
+
+    #price = models.ForeignKey('Book_List')
     def __str__(self):
         return self.uid
 class Delivery(models.Model):
@@ -43,8 +53,7 @@ class Delivery(models.Model):
     email = models.CharField(max_length = 20)
     def __str__(self):
         return self.name
-
-# Create your models here.
+# Create your models here.'''
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE, primary_key = True)
