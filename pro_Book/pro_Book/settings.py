@@ -102,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+LOGIN_REDIRECT_URL = 'index'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static"),'/var/www/static/',]
 # Internationalization

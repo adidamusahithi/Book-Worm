@@ -18,7 +18,7 @@
       padding: 25px;
     }
     header {
-    background-color: #e60073;
+    background-color: #00cc99;
     }
     .h1{
        
@@ -44,10 +44,7 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
-body{
-   background-repeat:no-repeat;
-   background-position: center;
-   background-size: cover;
+
 
 }
 
@@ -58,7 +55,7 @@ body{
 
 <body>
 <header class="container-fluid text-center">
-  <p><h1>Book Worm</h1></p>
+  <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -77,25 +74,24 @@ body{
        
      </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><input type="text" name="search" placeholder="Search.."></li>
+       
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
 </br>
-
+<h3 align = "center"> Book Details  </h3>
 <div class = "container">
-   {% for c1 in book_det %} 
-    <br><br><br><br><br>
-    <img src = "{{c1.book_url}}" align = "left" width = "25%" height = "12%"><br><br><br><br> <br><br><br> <br><br><br>!--> 
+   {% for c1 in Book_det %} 
+    <br><br>
+   <img src = "{{c1.book_url}}" align = "left" width = "25%" height = "12%"><br><br><br><br> <br><br><br> <br><br><br> 
 	
-    	&nbsp;&nbsp;<br><b><h3>{{c1.Bname}} </h3></b><br/>
-    		
+    	&nbsp;&nbsp;<br><h3>{{c1.Bname}}<br> Author:  <br> Price:  <br> Rating:  <br> Reviews: </h3></b><br/>
 <!--    	<button type ="button" href = "#"><b>Add to WishList</b></button><br><br><br>!-->
 <a href = "/app_Book/wish_l/{{c1.Bid}}" role = "button"><h4><b>Add to wishlist</b></h4></a><br></li>
    {% endfor %}
-    
+    <br><p>{{price.price}}</p></br>
 
 </div>
 

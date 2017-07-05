@@ -17,11 +17,11 @@
     
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #00cc99;
       padding: 25px;
     }
     header {
-    background-color: #e60073;
+    background-color: #00cc99;
     }
     .h1{
        
@@ -64,7 +64,7 @@ a {
 
 <body background = "{% static "/app_Book/bg1.jpg" %}">
 <header class="container-fluid text-center">
-  <p><h1>Book Worm</h1></p>
+  <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -80,11 +80,13 @@ a {
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li class="active"><a href="#">About</a></li>
+        
        
      </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><input type="text" name="search" placeholder="Search.."></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+           <!--   <li><a href="{% url 'login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       <li><a href="http://127.0.0.1:8000/app_Book/signup"><span class="glyphicon glyphicon-log-out"></span> signup</a></li>!-->
       </ul>
     </div>
   </div>

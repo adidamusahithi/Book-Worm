@@ -18,7 +18,7 @@
       padding: 25px;
     }
     header {
-    background-color: #e60073;
+    background-color: #00cc99;
     }
     .h1{
        
@@ -58,7 +58,7 @@ body{
 
 <body>
 <header class="container-fluid text-center">
-  <p><h1>Book Worm</h1></p>
+  <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -114,12 +114,17 @@ body{
       <tr>
 		{% for c2 in wish_l %} 
         <td>{{c2.Bname}}</td>
-        <td> <p id ="demo">  </p></td>
+        <td>{{price.price}} </p></td>
         <td><a href="#">
           <span class="glyphicon glyphicon-trash"></span>
         </a> </td> 
        {% endfor %}
       </tr>
+      </tbody>
+  </table>
+  <p align = "center"> <a href = "/app_Book/index" align = "center">Add Another</a></p>
+  <p align = "center"><a href = "#" align = "center">Proceed</a></p>
+     
      <!-- <tr>
         <td>Book2</td>
         <td>Debbie</td>
