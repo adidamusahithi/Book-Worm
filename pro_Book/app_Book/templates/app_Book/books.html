@@ -9,13 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
-    /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
@@ -28,7 +25,7 @@
        font-color:#000000;
     }
     </style>
-<style> 
+    <style> 
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -53,16 +50,13 @@ body{
    background-size: cover;
 
 }
-a {
-	width:175px;
-	height:40px;
-}
+
 .w3-button {width:175px; height:40px;}
 </style>
 
 </head>
 
-<body background = "{% static "/app_Book/bg1.jpg" %}">
+<body>
 <header class="container-fluid text-center">
   <p><h1>Book Worm</h1></p>
 </header>
@@ -78,7 +72,7 @@ a {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/app_Book/index">Home</a></li>
         <li class="active"><a href="#">About</a></li>
        
      </ul>
@@ -89,18 +83,41 @@ a {
     </div>
   </div>
 </nav>
-<div class="container-fluid bg-3 text-center" align ="center" >    
-  <h3>Generes</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <center>
-	{% for c in index %} 
-		<a href = "/app_Book/books/{{c.cname}}" role = "button"><h4><b>{{c.cname}}</b></h4></a><br></li>
-	{% endfor %}
-      </center>
-    </div>
-  </div>
+</br>
+
+<div class = "container">
+   {% for c1 in books %} 
+    <br><br><br><br><br>
+    <img src = "{{c1.book_url}}" align = "left" width = "25%" height = "12%"><br><br><br><br> <br><br><br> <br><br><br> 
+	
+    	&nbsp;&nbsp;<br><b><h3>   {{c1.Bname}} </h3></b><br/>
+    	<!--<button type ="button" href = "/app_Book/book_det/{{c1.Bname}}"><b>View Details</b></button><br><br><br>!-->
+       <a href = "/app_Book/book_det/{{c1.Bid}}" role = "button"><h4><b>view details</b></h4></a><br></li>
+   {% endfor %}
+    
+
 </div>
+
+<!--{% for c in index %} 
+		<a href = "/app_Book/books" role = "button"><h4><b>{{c.cname}}</b></h4></a><br></li>
+	{% endfor %}	
+!-->
+<!--
+</br>
+<div class = "container">
+    <img src = "c1.jpg" align = "left" hspace = "50">
+	<ul>
+    	&nbsp;&nbsp;&nbsp;<b><h3>COMPUTER SCIENCE USING JAVA.. </h3></b><br/>
+    	<button type ="button" href = "_blank"><b>View Details</b></button> 
+    </ul>
+</div>
+</br>
+<div class = "container">
+    <img src = "c1.jpg" align = "left" hspace = "50">
+	<ul>
+    	&nbsp;&nbsp;&nbsp;<b><h3>COMPUTER SCIENCE USING JAVA.. </h3></b><br/>
+    	<button type ="button" href = "_blank"><b>View Details</b></button> 
+    </ul>
+</div>!-->
 </body>
 </html>
-

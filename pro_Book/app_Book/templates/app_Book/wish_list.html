@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
+
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
-    /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
@@ -28,7 +25,7 @@
        font-color:#000000;
     }
     </style>
-<style> 
+    <style> 
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -53,16 +50,13 @@ body{
    background-size: cover;
 
 }
-a {
-	width:175px;
-	height:40px;
-}
+
 .w3-button {width:175px; height:40px;}
 </style>
 
 </head>
 
-<body background = "{% static "/app_Book/bg1.jpg" %}">
+<body>
 <header class="container-fluid text-center">
   <p><h1>Book Worm</h1></p>
 </header>
@@ -78,29 +72,77 @@ a {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/app_Book/index">Home</a></li>
         <li class="active"><a href="#">About</a></li>
        
      </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><input type="text" name="search" placeholder="Search.."></li>
+         
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>
-</nav>
-<div class="container-fluid bg-3 text-center" align ="center" >    
-  <h3>Generes</h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-      <center>
-	{% for c in index %} 
-		<a href = "/app_Book/books/{{c.cname}}" role = "button"><h4><b>{{c.cname}}</b></h4></a><br></li>
-	{% endfor %}
-      </center>
-    </div>
-  </div>
+</nav><br></br>
+   <!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+             document.getElementById("demo").innerHTML =
+             Math.floor(Math.random() * 300) + 400;
+      </script>
+		
+</head>
+<body>
+
+<div class="container">
+  <!--<h2>Table</h2>
+  <p>The .active class applies the hover color to a particular row or cell:</p> !-->                                        
+  <table class="table" align = "center">
+    <thead>
+     <tr class="active">
+       <td>Title</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+     
+    <tbody>
+      
+      <tr>
+		{% for c2 in wish_l %} 
+        <td>{{c2.Bname}}</td>
+        <td> <p id ="demo">  </p></td>
+        <td><a href="#">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a> </td> 
+       {% endfor %}
+      </tr>
+     <!-- <tr>
+        <td>Book2</td>
+        <td>Debbie</td>
+        <td>200 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a> </td>
+      </tr>
+      <tr>
+        <td>Book3</td>
+        <td>John</td>
+        <td>300 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a> </td>
+      </tr> 
+    </tbody>
+  </table>
+  <center> <input type = "submit" value = "Add Another"> &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type = "submit" value = "Proceed"> </center>
 </div>
+
+</body>
+</html>
+!-->
 </body>
 </html>
 

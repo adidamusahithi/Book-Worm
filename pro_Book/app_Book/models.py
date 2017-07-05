@@ -12,7 +12,7 @@ class Book_List(models.Model):
     Bid = models.CharField(max_length = 10,primary_key = True)
     Bname = models.CharField(max_length = 100)
     cid = models.ForeignKey('Categories') 
-    book_url = models.CharField(max_length = 150,default = "null")
+    book_url = models.CharField(max_length = 170,default = "https://idreambooks.com/images/libraries_landing_page/nytimes.png")
     def __str__(self):
         return self.Bid
 class Author(models.Model):
@@ -72,4 +72,4 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user = instance)
 @receiver(post_save, sender=User)
 def sender_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    instance.profile.save() 
