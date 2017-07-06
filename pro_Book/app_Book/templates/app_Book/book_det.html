@@ -20,9 +20,13 @@
     header {
     background-color: #00cc99;
     }
+    
     .h1{
        
        font-color:#000000;
+    }
+    .img1 {
+        float: left;
     }
     </style>
     <style> 
@@ -44,6 +48,10 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+body{
+   background-repeat:no-repeat;
+   background-position: center;
+   background-size: cover;
 
 
 }
@@ -53,7 +61,7 @@ input[type=text]:focus {
 
 </head>
 
-<body>
+<body background = "{% static "/app_Book/bg2.jpg" %}">
 <header class="container-fluid text-center">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
@@ -81,40 +89,21 @@ input[type=text]:focus {
   </div>
 </nav>
 </br>
-<h3 align = "center"> Book Details  </h3>
-<div class = "container">
-   {% for c1 in Book_det %} 
-    <br><br>
-   <img src = "{{c1.book_url}}" align = "left" width = "25%" height = "12%"><br><br><br><br> <br><br><br> <br><br><br> 
-	
-    	&nbsp;&nbsp;<br><h3>{{c1.Bname}}<br> Author:  <br> Price:  <br> Rating:  <br> Reviews: </h3></b><br/>
-<!--    	<button type ="button" href = "#"><b>Add to WishList</b></button><br><br><br>!-->
-<a href = "/app_Book/wish_l/{{c1.Bid}}" role = "button"><h4><b>Add to wishlist</b></h4></a><br></li>
-   {% endfor %}
-    <br><p>{{price.price}}</p></br>
 
-</div>
+{% for c1 in book_det %}
+<table>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{c1.book_url}}" align = "left-center" alt="W3Schools.com" width="300" height="400"></td>
+	<td></td>
+	<td>
+        &nbsp;&nbsp;&nbsp;<b><h3>&nbsp;&nbsp;&nbsp;{{c1.Bname}} </h3></b>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;AUTHOR : </h3></b></p>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;PRICE : {{price_det.price}}</h3></b></p>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;RATING : {{price_det.rate}}</h3></b></p>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;DET_ID : {{price_det.det_id}}</h3></b></p><br/></br><br>
+        <a href = "/app_Book/wish_l/{{c1.Bid}}" role = "button"><h4>&nbsp;&nbsp;&nbsp;<b>Add to wishlist</b></h4></a><br></td></tr></table>
+    
+{% endfor %}
 
-<!--{% for c in index %} 
-		<a href = "/app_Book/books" role = "button"><h4><b>{{c.cname}}</b></h4></a><br></li>
-	{% endfor %}	
-!-->
-<!--
-</br>
-<div class = "container">
-    <img src = "c1.jpg" align = "left" hspace = "50">
-	<ul>
-    	&nbsp;&nbsp;&nbsp;<b><h3>COMPUTER SCIENCE USING JAVA.. </h3></b><br/>
-    	<button type ="button" href = "_blank"><b>View Details</b></button> 
-    </ul>
-</div>
-</br>
-<div class = "container">
-    <img src = "c1.jpg" align = "left" hspace = "50">
-	<ul>
-    	&nbsp;&nbsp;&nbsp;<b><h3>COMPUTER SCIENCE USING JAVA.. </h3></b><br/>
-    	<button type ="button" href = "_blank"><b>View Details</b></button> 
-    </ul>
-</div>!-->
 </body>
 </html>

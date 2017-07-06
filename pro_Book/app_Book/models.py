@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
 class Categories(models.Model):
     cid = models.CharField(max_length = 10, primary_key = True)
     cname = models.CharField(max_length = 50)
@@ -20,11 +21,13 @@ class Author(models.Model):
     Aname = models.CharField(max_length = 70)
     def __str__(self):
         return self.Aid
+
 class Book_Author(models.Model):
     Bid = models.ForeignKey('Book_List')
     Aid = models.ForeignKey('Author')
     def __str__(self):
         return self.Bid
+
 class Book_details(models.Model):
     Bid = models.ForeignKey('Book_List')   
     price = models.IntegerField(max_length = 100,default = 1)

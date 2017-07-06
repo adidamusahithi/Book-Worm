@@ -24,15 +24,15 @@ def books(request, c_name):
 #Bname is column from table and b_name is id
 
 def book_list(request, b_id):
-    #list(details) = Book_List.objects.filter(list(Bid) = Book_List.objects.get(Bname = b_name).Bid)
     bid = Book_List.objects.filter(Bid = b_id) 
-    price = Book_details.objects.filter(Bid = b_id)
-    context = {'Book_det': bid,'price': price}
+    price = Book_details.objects.get(Bid = bid)
+    context = {'book_det': bid,'price_det': price}
     return render(request, 'app_Book/book_det.html', context)
 
 def wishlist(request, w_name):
     wish = Book_List.objects.filter(Bid = w_name)
-    context = {'wish_l': wish}
+    price = Book_details.objects.get(Bid = wish)
+    context = {'wish_l': wish, 'price_det': price}
     return render(request, 'app_Book/wish_list.html', context)
     
     
