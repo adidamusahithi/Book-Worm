@@ -41,16 +41,16 @@ class Book_details(models.Model):
 
 
 
-
+'''
     #rating = models.IntegerField()
-'''class Wishlist(models.Model):
-    uid = models.CharField(max_length = 10)
-    #Bid = models.ForeignKey('Book_List')
-
-    #price = models.ForeignKey('Book_List')
+class Wishlist(models.Model):
+    #uid = models.CharField(max_length = 10)
+    Bid = models.ForeignKey('Book_List')
     def __str__(self):
         return self.uid
-class Delivery(models.Model):
+
+    #price = models.ForeignKey('Book_List')
+    class Delivery(models.Model):
     name = models.CharField(max_length = 30)
     city = models.CharField(max_length = 20)
     address = models.CharField(max_length = 100)

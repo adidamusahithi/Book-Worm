@@ -55,9 +55,10 @@ body{
 </style>
 
 </head>
-
+{% load static %}
 <body>
 <header class="container-fluid text-center">
+    <img src = "{% static "/app_Book/image.jpg" %}" style = "float:left">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
@@ -78,7 +79,7 @@ body{
      </ul>
       <ul class="nav navbar-nav navbar-right">
          
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li><a href="/app_Book/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>
@@ -96,8 +97,7 @@ body{
       </script>
 		
 </head>
-<body>
-
+<body background = "{% static "/app_Book/bg11.jpg" %}" height = "120px">
 <div class="container">
   <!--<h2>Table</h2>
   <p>The .active class applies the hover color to a particular row or cell:</p> !-->                                        
@@ -113,8 +113,8 @@ body{
       
       <tr>
 		{% for c2 in wish_l %} 
-        <td>{{c2.Bname}}</td>
-        <td>{{price_det.price}} </p></td>
+        <td><b>{{c2.Bname}}<b></td>
+        <td><b>{{price_det.price}}<b></p></td>
         <td><a href="#">
           <span class="glyphicon glyphicon-trash"></span>
         </a> </td> 
@@ -122,8 +122,8 @@ body{
       </tr>
       </tbody>
   </table>
-  <p align = "center"> <a href = "/app_Book/index" align = "center">Add Another</a></p>
-  <p align = "center"><a href = "b_delivery" align = "center">Proceed</a></p>
+  <p align = "center"> <a href = "/app_Book/index" align = "center"><b>Add Another<b></a></p>
+  <p align = "center"><a href = "/app_Book/bookDelivery" align = "center"><b>Proceed<b></a></p>
      
 </body>
 </html>

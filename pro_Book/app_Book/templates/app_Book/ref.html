@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
+<html>
 <head>
-  <title>Bootstrap Example</title>
+<title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
+    
+    /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #00cc99;
       padding: 25px;
     }
     header {
@@ -25,7 +26,7 @@
        font-color:#000000;
     }
     </style>
-    <style> 
+<style> 
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -50,15 +51,16 @@ body{
    background-size: cover;
 
 }
-
+a {
+	width:175px;
+	height:40px;
+}
 .w3-button {width:175px; height:40px;}
 </style>
 
 </head>
-
 <body>
 <header class="container-fluid text-center">
-      <img src = "{% static "/app_Book/image.jpg" %}" style = "float:left">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
@@ -73,30 +75,17 @@ body{
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/app_Book/index">Home</a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li class="active"><a href="#">About</a></li>
+        
        
      </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li><input type="text" name="search" placeholder="Search.."></li>
-        <li><a href="/app_Book/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
       </ul>
     </div>
   </div>
 </nav>
-</br>
-
-<div class = "container">
-   {% for c1 in books %} 
-    <br><br><br><br><br>
-    <img src = "{{c1.book_url}}" align = "left" width = "25%" height = "12%"><br><br><br><br> <br><br><br> <br><br><br> 
-	
-    	&nbsp;&nbsp;<br><b><h3>   {{c1.Bname}} </h3></b><br/>
-       <a href = "/app_Book/book_det/{{c1.Bid}}" role = "button"><h4><b>view details</b></h4></a><br></li>
-   {% endfor %}
-    
-
-</div>
-
 </body>
 </html>

@@ -5,11 +5,12 @@ from app_Book.models import Categories, Book_List, Book_details
 from django.contrib.auth.forms import UserCreationForm
 from app_Book.forms import SignUpForm
 
-#index is the html page and we r tranfering cat details to index templates
 def book_home(request):
-    #cat = Categories.objects.all()
     return render(request, 'app_Book/book_home.html',{})
+def book_delivery(request):
+    return render(request, 'app_Book/book_delivey.html',{})
 
+#index is the html page and we r tranfering cat details to index templates
 def index(request):
     cat = Categories.objects.all()
     return render(request, 'app_Book/index.html',{'index': cat})

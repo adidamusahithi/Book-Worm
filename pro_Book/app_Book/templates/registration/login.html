@@ -1,7 +1,93 @@
 <html>
-<body>
+<head>
+<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #00cc99;
+      padding: 25px;
+    }
+    header {
+    background-color: #00cc99;
+    }
+    .h1{
+       
+       font-color:#000000;
+    }
+    </style>
+<style> 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
 
-{% block title %}Login{% endblock %}
+input[type=text]:focus {
+    width: 100%;
+}
+body{
+   background-repeat:no-repeat;
+   background-position: center;
+   background-size: cover;
+
+}
+a {
+	width:175px;
+	height:40px;
+}
+.w3-button {width:175px; height:40px;}
+</style>
+
+</head>
+<body>
+<header class="container-fluid text-center">
+  <p><b><h1>Book Worm</h1></b></p>
+</header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" height = 70px></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#">About</a></li>
+        
+       
+     </ul>
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 {% block content %}
   <h2>Login</h2>

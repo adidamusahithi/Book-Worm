@@ -65,6 +65,7 @@ a {
 <body>
 {% load static %}
 <header class="container-fluid text-center">
+  <img src = "{% static "/app_Book/image.jpg" %}" style = "float:left">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
@@ -79,7 +80,6 @@ a {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
         <li class="active"><a href="#">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -89,12 +89,12 @@ a {
     </div>
   </div>
 </nav>
-<br><br><p> <h3 align = "center">To have a look at our Book store login/signup</h3></p></br></br>
-<div class="w3-content w3-section" style="max-width:500px" >
-  <img class="mySlides" src= "{% static "/app_Book/float1.jpg" %}"style="width:290%" alt = "dhgfh">
-  <img class="mySlides" src="{% static "/app_Book/float2.png" %}" style="width:290%">
-  <img class="mySlides" src="{% static "/app_Book/float3.jpg" %}" style="width:290%">
-   <img class="mySlides" src="{% static "/app_Book/float3.jpeg" %}" style="width:290%">
+<br><p> <h3 align = "center">To have a look at our Book store login/signup</h3></p></br>
+<div class="w3-content w3-section" height = "450" width = "900" >
+  <img class="mySlides" src= "{% static "/app_Book/float1.jpg" %}" width = '1360' height = "450" alt = "dhgfh">
+  <img class="mySlides" src="{% static "/app_Book/float2.png" %}" width = '1360' height = "450" >
+  <img class="mySlides" src="{% static "/app_Book/float3.jpg" %}" width = '1360' height = "450" >
+   <img class="mySlides" src="{% static "/app_Book/float3.jpeg" %}" width = '1360' height = "450" >
 </div>
 
 <script>

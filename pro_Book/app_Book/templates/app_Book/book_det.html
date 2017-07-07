@@ -60,9 +60,9 @@ body{
 </style>
 
 </head>
-
-<body background = "{% static "/app_Book/bg2.jpg" %}">
+<body background = "{% static "/app_Book/bg7.jpg" %}">
 <header class="container-fluid text-center">
+    <img src = "{% static "/app_Book/image.jpg" %}" style = "float:left">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
@@ -83,7 +83,7 @@ body{
      </ul>
       <ul class="nav navbar-nav navbar-right">
        
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li><a href="/app_Book/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>
@@ -96,11 +96,9 @@ body{
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{c1.book_url}}" align = "left-center" alt="W3Schools.com" width="300" height="400"></td>
 	<td></td>
 	<td>
-        &nbsp;&nbsp;&nbsp;<b><h3>&nbsp;&nbsp;&nbsp;{{c1.Bname}} </h3></b>
-	<p><b><h3>&nbsp;&nbsp;&nbsp;AUTHOR : </h3></b></p>
-	<p><b><h3>&nbsp;&nbsp;&nbsp;PRICE : {{price_det.price}}</h3></b></p>
-	<p><b><h3>&nbsp;&nbsp;&nbsp;RATING : {{price_det.rate}}</h3></b></p>
-	<p><b><h3>&nbsp;&nbsp;&nbsp;DET_ID : {{price_det.det_id}}</h3></b></p><br/></br><br>
+        &nbsp;&nbsp;&nbsp;<p><b><h3>&nbsp;&nbsp;&nbsp;{{c1.Bname}} </h3></b></p><br>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;PRICE : {{price_det.price}}/-</h3></b></p><br>
+	<p><b><h3>&nbsp;&nbsp;&nbsp;RATING : {{price_det.rate}}</h3></b></p><br>
         <a href = "/app_Book/wish_l/{{c1.Bid}}" role = "button"><h4>&nbsp;&nbsp;&nbsp;<b>Add to wishlist</b></h4></a><br></td></tr></table>
     
 {% endfor %}

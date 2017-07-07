@@ -64,6 +64,7 @@ a {
 
 <body background = "{% static "/app_Book/bg1.jpg" %}">
 <header class="container-fluid text-center">
+    <img src = "{% static "/app_Book/image.jpg" %}" style = "float:left">
   <p><b><h1>Book Worm</h1></b></p>
 </header>
 <nav class="navbar navbar-inverse">
@@ -84,14 +85,14 @@ a {
        
      </ul>
       <ul class="nav navbar-nav navbar-right">
-       <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       <li><a href="/app_Book/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
       </ul>
     </div>
   </div>
 </nav>
 <div class="container-fluid bg-3 text-center" align ="center" >    
-  <h3>Generes</h3><br>
+  <h2>Geners</h2><br>
   <div class="row">
     <div class="col-sm-3">
       <center>
